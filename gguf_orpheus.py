@@ -12,13 +12,13 @@ import queue
 import asyncio
 
 # LM Studio API settings
-API_URL = "http://127.0.0.1:1234/v1/completions"
+API_URL = "http://192.168.191.237:1234/v1/completions"
 HEADERS = {
     "Content-Type": "application/json"
 }
 
 # Model parameters
-MAX_TOKENS = 1200
+MAX_TOKENS = 4200
 TEMPERATURE = 0.6
 TOP_P = 0.9
 REPETITION_PENALTY = 1.1
@@ -56,7 +56,7 @@ def generate_tokens_from_api(prompt, voice=DEFAULT_VOICE, temperature=TEMPERATUR
     
     # Create the request payload for the LM Studio API
     payload = {
-        "model": "orpheus-3b-0.1-ft-q4_k_m",  # Model name can be anything, LM Studio ignores it
+        "model": "orpheus-3b-0.1-ft",  # Model name can be anything, LM Studio ignores it
         "prompt": formatted_prompt,
         "max_tokens": max_tokens,
         "temperature": temperature,
